@@ -1,0 +1,10 @@
+Follow the wiki (http://tsm-wiki/display/LINKVIEW/SBOM+Eclipse+workspace+setup) to:
+
+1) Install buckminster
+2) Setup proxy bypass for local machines. Make sure you include 'tmb-bs-tmis01' which hosts the eclipse mirror for juno
+2) Setup SVN including user name and password string substitutions
+3) Create an empty target platform
+4) Open build-local.cquery OR build.cquery
+5) Click on Resolve & Materialise
+
+Note, Resolve & Materialise is a lot faster with 'build-local.cquery' than 'build.cqery' as it uses a local eclipse mirror

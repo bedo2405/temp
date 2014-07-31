@@ -1,0 +1,4 @@
+MUST use java 6 as 7 can't unpack 'pack200' nested jars 
+Also, use "Packed Strategy" SKIP
+
+Last time I used kepler on the jenkins build server.

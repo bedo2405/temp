@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0"
+    xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0">
+ 
+	<rm:property key="projects.location" value="${workspace.root}" />
+	<rm:property key="eclipse.download" value="http://download.eclipse.org" />
+	<rm:property key="eclipse.target.platform" value="${eclipse.download}/releases/juno" />
+
+    <rm:locator searchPathRef="localsources" failOnError="false" />
+	<rm:locator searchPathRef="svn.ssdi" failOnError="false" />
+    <rm:locator searchPathRef="svn.tsb.common" failOnError="false" />
+    <rm:locator searchPathRef="eclipse" />
+ 
+    <rm:searchPath name="eclipse">
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle"
+            readerType="p2" source="false" mutable="false">
+            <rm:property key="buckminster.source" value="false" />
+            <rm:property key="buckminster.mutable" value="false" />
+            <rm:uri format="{0}">
+                <bc:propertyRef key="eclipse.target.platform" />
+            </rm:uri>
+        </rm:provider>
+	</rm:searchPath>
+	
+	<rm:searchPath name="localsources">
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="local" mutable="false">
+            <rm:uri format="{0}/{1}">
+                <bc:propertyRef key="projects.location" />
+                <bc:propertyRef key="buckminster.component" />
+            </rm:uri>
+        </rm:provider>
+    </rm:searchPath>
+ 
+	<rm:searchPath name="svn.ssdi">
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="svn" mutable="true">
+			<rm:uri format="http://{0}:{1}@tmb-s6-buildsrv:81/svn/ssdi/head/ssdi/{2}">
+				<bc:propertyRef key="svn.user.tmbs6buildsrv" />
+				<bc:propertyRef key="svn.password.tmbs6buildsrv" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+        </rm:provider>
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="svn" mutable="true">
+			<rm:uri format="http://{0}:{1}@tmb-s6-buildsrv:81/svn/jashkel/head/{2}">
+				<bc:propertyRef key="svn.user.tmbs6buildsrv" />
+				<bc:propertyRef key="svn.password.tmbs6buildsrv" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+        </rm:provider>
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="svn" mutable="true">
+			<rm:uri format="http://{0}:{1}@tmb-s6-buildsrv:81/svn/{2}/head/">
+				<bc:propertyRef key="svn.user.tmbs6buildsrv" />
+				<bc:propertyRef key="svn.password.tmbs6buildsrv" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+        </rm:provider>
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="svn" mutable="true">
+			<rm:uri format="http://{0}:{1}@tmb-s6-buildsrv:81/svn/jpdobjectslibrary/head/{2}">
+				<bc:propertyRef key="svn.user.tmbs6buildsrv" />
+				<bc:propertyRef key="svn.password.tmbs6buildsrv" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+        </rm:provider>
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="svn" mutable="true">
+			<rm:uri format="http://{0}:{1}@tmb-s6-buildsrv:81/svn/jscatslib/head/{2}">
+				<bc:propertyRef key="svn.user.tmbs6buildsrv" />
+				<bc:propertyRef key="svn.password.tmbs6buildsrv" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+        </rm:provider>
+    </rm:searchPath>
+
+	<rm:searchPath name="svn.tsb.common">
+        <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster"
+            readerType="svn" mutable="true">
+			<rm:uri format="http://{0}:{1}@tsm-bs-svn01/svn/tsb.common/head/{2}">
+				<bc:propertyRef key="svn.user.tsmbssvn01" />
+				<bc:propertyRef key="svn.password.tsmbssvn01" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+        </rm:provider>
+    </rm:searchPath>
+    
+</rm:rmap>

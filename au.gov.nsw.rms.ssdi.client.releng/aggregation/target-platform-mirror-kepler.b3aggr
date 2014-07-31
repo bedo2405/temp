@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:aggregator="http://www.eclipse.org/b3/2011/aggregator/1.1.0" description="MIrror RCP (with sources), launches and p2 update feature" label="RCP SDK, Launchers, and p2 Update Features" buildRoot="d:/targetplatform/kepler_skip" packedStrategy="SKIP">
+  <validationSets label="main">
+    <contributions label="RCP Kepler">
+      <repositories location="http://download.eclipse.org/releases/kepler">
+        <bundles name="org.eclipse.jdt.junit4.runtime" versionRange="1.1.300.v20130514-0733"/>
+        <bundles name="org.junit" versionRange="4.11.0.v201303080030"/>
+        <features name="org.eclipse.rcp.feature.group" versionRange="4.3.2.v20140221-1700"/>
+        <features name="org.eclipse.rcp.source.feature.group" versionRange="4.3.2.v20140221-1700"/>
+        <features name="org.eclipse.equinox.executable.feature.group" versionRange="3.6.0.v20140117-1004"/>
+        <features name="org.eclipse.equinox.p2.user.ui.feature.group" versionRange="2.2.0.v20140221-1852"/>
+        <features name="org.eclipse.emf.sdk.feature.group" versionRange="2.9.2.v20140203-1126"/>
+        <features name="org.eclipse.help.feature.group" versionRange="2.0.2.v20140221-1700"/>
+      </repositories>
+    </contributions>
+  </validationSets>
+  <configurations/>
+</aggregator:Aggregation>
